@@ -14,18 +14,18 @@ draw = 0
 
 def input_your_choose():
     while True:
-        choose = input('Choose: [1] rock, [2] paper or [3] scissors: ')
+        choice = input('Choose: [1] rock, [2] paper or [3] scissors: ')
         #you can input entire selected word
-        if choose.lower() in outcomes_dict:
-            return choose.lower()
+        if choice.lower() in outcomes_dict:
+            return choice.lower()
         #or just number 
         try:
-            choose = int(choose)
+            choice = int(choice)
         except:
             continue
         #if number exists in this dict below, then return your choose
-        if (int_choose := {1: 'rock', 2: 'paper', 3: 'scissors'}).get(int(choose)):
-            return int_choose[ choose ]
+        if (int_choice := {1: 'rock', 2: 'paper', 3: 'scissors'}).get(int(choice)):
+            return int_choice[ choice ]
 
 def it_is_time_for_end_the_game():
     while True:
@@ -41,7 +41,7 @@ def s_just_for_a_better_look( variable ):
 while True:
     #player's choice
     player_choice = input_your_choose()
-    #Get comp choose
+    #Get comp choice
     comp_choice = random.choice( list(outcomes_dict.keys()) )
     #Print players choose
     print('[PLAYER] '+player_choice.upper()+' versus '+comp_choice.upper()+' [CPU]')
