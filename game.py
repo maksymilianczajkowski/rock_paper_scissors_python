@@ -1,18 +1,15 @@
-#author: maximiso
-
 import random
 
 outcomes_dict = { 'rock': 'scissors',
                   'paper': 'rock',
-                  'scissors': 'paper'
-                  
+                  'scissors': 'paper'  
                 }
 
 player_wins = 0
 comp_wins = 0
 draw = 0
 
-def input_your_choose():
+def input_your_selection():
     while True:
         choice = input('Choose: [1] rock, [2] paper or [3] scissors: ')
         #you can input entire selected word
@@ -23,7 +20,7 @@ def input_your_choose():
             choice = int(choice)
         except:
             continue
-        #if number exists in this dict below, then return your choose
+        #if number exists in this dict below, then return your choice
         if (int_choice := {1: 'rock', 2: 'paper', 3: 'scissors'}).get(int(choice)):
             return int_choice[ choice ]
 
@@ -40,7 +37,7 @@ def s_just_for_a_better_look( variable ):
 
 while True:
     #player's choice
-    player_choice = input_your_choose()
+    player_choice = input_your_selection()
   
     #Get comp choice
     comp_choice = random.choice( list(outcomes_dict.keys()) )
